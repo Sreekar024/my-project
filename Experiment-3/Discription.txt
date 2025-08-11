@@ -1,0 +1,49 @@
+1. LAYOUT & STRUCTURE (HTML)
+->Element: <div class="dashboard"> (Main Grid Container)
+  Purpose: Acts as the main layout container using CSS Grid to arrange the header, sidebar, main content, and footer.
+  Effect: Creates a professional, responsive structure where each section is placed in a defined grid cell.
+->Element: <div class="header"> (Header Section)
+  Purpose: Displays the title "Admin Dashboard" and a dark mode toggle label.
+  Effect: Spans across the top of the page, providing clear branding and theme control in a single bar.
+->Element: <div class="aside"> (Sidebar Navigation)
+  Purpose: Contains the navigation menu with links (Home, Users, Settings).
+  Effect: Provides quick navigation access on the left side of the dashboard.
+->Element: <div class="main"> (Main Content Area)
+  Purpose: Holds the welcome message and placeholder text for charts, tables, or reports.
+  Effect: Serves as the main workspace for displaying dashboard data.
+->Element: <div class="footer"> (Footer Section)
+  Purpose: Displays copyright text.
+  Effect: Remains at the bottom of the layout, providing closure to the page.
+
+2. THEME VARIABLES & SWITCHING (CSS)
+
+->CSS Variables (:root)
+  Purpose: Stores color values for both light and dark themes.
+  Example: --bg-color-header, --bg-color-footer, --body-color-text.
+  Effect: Makes it easy to change the theme by updating variables instead of editing each selector.
+->Dark Mode Trigger (#theme-switch:checked ~ .dashboard)
+  Purpose: Changes CSS variables when the theme switch checkbox is checked.
+  Effect: Instantly switches the dashboard to dark mode without JavaScript or page reload.
+
+3. SECTION STYLING (CSS)
+->Body
+  Purpose: Sets the global background, text color, and font.
+  Effect: Ensures consistent look and feel across the dashboard.
+->Header
+  Purpose: Uses flex to position the title on the left and theme switch label on the right.
+  Effect: Balanced, professional alignment with easy theme toggle access.
+->Sidebar (.aside)
+  Purpose: Provides a fixed-width navigation column with padding and background color.
+  Effect: Improves readability and maintains separation from the main content.
+->Main Content (.main)
+  Purpose: Displays dashboard data against a clean background with scroll support.
+  Effect: Keeps the content readable and accessible even when overflowing vertically.
+->Footer
+  Purpose: Centers text vertically and horizontally.
+  Effect: Maintains visual balance at the bottom of the page.
+
+4. LEARNING OUTCOMES
+>How to structure a web page using CSS Grid layout for professional dashboard design.
+>How to implement theme switching using only HTML & CSS (no JavaScript).
+>How to use CSS custom properties (variables) for easy theme customization.
+>How to create a responsive and visually consistent layout with semantic HTML.
