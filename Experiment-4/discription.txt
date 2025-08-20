@@ -1,0 +1,60 @@
+->AIM
+
+To create a simple feature that displays a live character count as the user types in a textarea, helping to practice real-time event handling and dynamic content updates for better user interaction.
+
+->REQUIREMENTS & FUNCTIONALITY
+
+1: FIELD: Textarea (User Input)
+   * Requirement: Required for typing text.
+   * Functionality: As the user types or deletes characters, the live character count is updated in real time.
+
+   VALID INPUTS:
+   * "Hello" → Character count = 5
+   * "This is a test." → Character count = 15
+   INVALID INPUTS:
+   * Empty textarea → Counter shows 0
+
+-> CSS STYLING BREAKDOWN: A STRUCTURED OVERVIEW
+
+1: ELEMENT: body (Page Background)
+   * Property: padding: 20px;
+   * Effect: Creates space inside the page for neat display.
+
+2: ELEMENT: .container (Main Box)
+   > Properties & Effects:
+     * border: 1px solid black; → Gives a visible outline.
+     * padding: 10px; → Adds internal spacing.
+     * width: 500px; → Fixes container width.
+
+3: ELEMENT: textarea (User Input Field)
+   > Properties & Effects:
+    * width: 100%; → Stretches across the container.
+    * height: 100px; → Provides adequate typing space.
+    * font-size: 14px; → Makes text readable.
+    * padding: 8px; → Improves user comfort.
+    * box-sizing: border-box; → Maintains layout consistency.
+
+4: ELEMENT: .counter (Character Display Section)
+   Properties & Effects:
+   * font-weight: bold; → Makes counter text stand out.
+   * margin-top: 5px; → Adds separation from textarea.
+
+-> JAVASCRIPT FUNCTIONALITY
+   1: EVENT HANDLING
+      Code:
+        textarea.addEventListener('input', () => {
+  counter.textContent = textarea.value.length;
+});
+
+2: REAL-TIME UPDATE:-
+   Counter dynamically reflects the exact number of characters entered in the textarea.
+
+->EXPECTED OUTPUT
+  * A webpage with a textarea for typing.
+  * A live character counter displayed below that updates instantly as the user types.
+
+->LEARNING OUTCOMES
+  1: Learnt how to implement real-time event handling using JavaScript.
+  2: Practiced dynamic DOM manipulation for immediate content updates.
+  3: Understood the use of basic CSS styling for layout and readability.
+  4: Built an interactive webpage feature that improves user experience.
