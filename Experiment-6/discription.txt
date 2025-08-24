@@ -1,0 +1,32 @@
+->Title
+  Interactive SVG Drawing Tool with Mouse Event Handlers
+
+->Objective
+  To develop an interactive drawing tool using SVG and JavaScript, 
+  where users can draw freehand paths with the mouse. 
+  The project aims to demonstrate handling mouse events, 
+  SVG path creation, and dynamic rendering in real time.
+
+->Task Description
+  1: Create an SVG drawing area inside a styled container.
+  2: When the user presses the mouse (mousedown), a new path is started in the SVG.
+  3: As the mouse moves (mousemove), line segments are continuously added to the path, creating a freehand drawing effect.
+  4: On releasing the mouse (mouseup), the drawing stops and the path is finalized.
+  5: CSS is applied to style the container and SVG area for a neat drawing interface.
+
+->Expected Output
+  1: A clean SVG canvas where users can draw freehand paths with the mouse.
+  2: Smooth drawing lines in blue color, adjustable via stroke attributes.
+  3: Drawing stops automatically when the mouse is released.
+  4: A user-friendly and responsive drawing tool.
+
+->CSS Styling Breakdown
+  1: body → Provides text alignment, font, and spacing.
+  2: .container → Frames the SVG canvas with borders and padding.
+  3: svg → Defines drawing area size, border, background, and cursor style (crosshair).
+
+->Learning Outcomes
+  1: Learn how to use SVG elements dynamically with JavaScript.
+  2: Understand mouse event handling (mousedown, mousemove, mouseup).
+  3: Implement freehand drawing using SVG path commands.
+  4: Gain hands-on experience in combining HTML, CSS, and JavaScript for interactive graphics.
