@@ -1,0 +1,32 @@
+->Title
+  Dynamic Product Filter with Dropdown using JavaScript DOM Manipulation
+
+->Objective
+  To create a web-based product list that can be dynamically filtered and displayed according to the user’s selection from a dropdown menu. The objective is to practice JavaScript DOM manipulation, event handling, and dynamic UI updates without reloading the page.
+
+->Task Description
+  1: Build a simple web page that displays a list of products (e.g., Clothing, Electronics, Books).
+  2: Add a dropdown menu with filter options like All, Clothing, Electronics, Books above the product list.
+  3: When the user selects a category, the product list updates instantly to show only products belonging to that category.
+  4: If "All" is selected, the full product list is displayed again.
+  5: The filtering must be implemented using JavaScript event listeners and DOM manipulation.
+  6: CSS should be applied to style the container, dropdown, and product list for better readability and UI.
+
+->Expected Output:
+  1: The web page initially shows all products in a styled list.
+  2: Selecting a specific category hides other products and displays only the matching ones.
+  3: The changes occur dynamically without refreshing the page.
+  4: A clean and user-friendly interface with styled dropdown and product list.
+
+->CSS Styling Breakdown
+  1: body → Provides overall background, padding, and font styling for readability.
+  2: .container → Creates a white box layout with padding, border, and max-width for neat alignment.
+  3: h2 → Styles the heading with spacing
+  4: #category → Styles the dropdown with margin and padding.
+  5: #product-list li → Adds borders, spacing, and rounded corners for each product item.
+
+->Learning Outcomes
+  1: Understanding how to use HTML, CSS, and JavaScript together in a project.
+  2: Learning how to manipulate the DOM using JavaScript.
+  3: Using event listeners to handle user interactions.
+  4: Gaining hands-on practice in building a dynamic filtering feature without reloading a page.
