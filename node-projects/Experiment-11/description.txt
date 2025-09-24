@@ -1,0 +1,9 @@
+->Project: RESTful API for managing a collection of playing cards using Express.js.
+->Data Storage: Uses an in-memory array to store card details (suit, value, ID).
+->Supported Operations:
+->GET /cards – List all cards.
+->GET /cards/:id – Retrieve a card by its ID.
+->POST /cards – Add a new card (requires suit and value).
+->DELETE /cards/:id – Remove a card by its ID.
+->Response Format: All responses are in JSON.
+->Learning Objectives: Demonstrates routing, HTTP methods handling, middleware usage, and basic CRUD operations in Node.js with Express.js.

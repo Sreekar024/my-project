@@ -1,0 +1,8 @@
+This is an Express.js server that provides a simple REST API to manage a collection of cards. It supports:
+->GET / – Returns the request URL and method.
+->GET /cards – Returns all cards.
+->GET /cards/:id – Returns a single card by ID.
+-POST /cards – Adds a new card (requires suit and value).
+->DELETE /cards/:id – Removes a card by ID.
+->PATCH /update and POST /submit – Simple test endpoints.
+The server uses express.json() middleware to parse JSON request bodies, and all routes return responses in JSON format.
