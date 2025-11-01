@@ -1,0 +1,71 @@
+/* General container */
+.app-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Search bar */
+  .search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .search-bar:focus {
+    border-color: #007bff;
+  }
+  
+  /* Restaurant grid */
+  .restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+  
+  /* Restaurant card */
+  .restaurant-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .restaurant-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .restaurant-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #222;
+  }
+  
+  .restaurant-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* No results */
+  .no-results {
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,8 @@
+->Project: CLI Employee Management System using Node.js and arrays.
+->Data Storage: Employee data (name, ID) is stored in an in-memory array.
+->Supported Operations:
+  ->Add Employee – Add a new employee with name and ID.
+  ->List Employees – Display all employees in the array.
+  ->Remove Employee – Delete an employee by their ID.
+->User Interaction: Uses Node.js readline module to capture input interactively in the terminal.
+->Learning Objectives: Demonstrates Node.js basics, CLI applications, array operations, and handling user input without using external databases or files.

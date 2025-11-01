@@ -7,7 +7,7 @@ EXPERIMENT 16: Bank Transfer System
 FEATURES:
 • Account management
 • Money transfers with validation
-• Balance checking
+• Balance checkings
 • Rollback mechanism
 • Error handling
 

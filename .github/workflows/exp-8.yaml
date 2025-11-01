@@ -44,7 +44,11 @@ jobs:
       # Step 4: Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t react-experiment-8 .
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8
+          docker build -t $IMAGE:latest .
+
+      - name: Show local images (debug)
+        run: docker images
 
       - name: Check Docker Username (for debug only)
         run: echo "Docker user is $DOCKER_USERNAME"
@@ -58,8 +62,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Push Image to Docker Hub
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag react-experiment-8 ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-3-1:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8:latest
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8
+          docker push $IMAGE:latest
