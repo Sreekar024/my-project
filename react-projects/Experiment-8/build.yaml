@@ -1,4 +1,5 @@
 name: Build React App (Experiment-8)
+
 on:
   push:
     branches:
@@ -14,8 +15,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    # 👇 permissions should be here, not inside defaults
+
     permissions:
       contents: read
       packages: write
@@ -41,15 +41,20 @@ jobs:
           npm ci
           npm run build
 
-      # Step 4: Build Docker image
-      - name: Build Docker Image
+      # Optional: Validate Docker Hub secrets early
+      - name: Validate Docker Hub secrets
         run: |
-          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8
-          docker build -t $IMAGE:latest .
+          if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+            echo "ERROR: DOCKERHUB_USERNAME secret is not set";
+            exit 1;
+          fi
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "ERROR: DOCKERHUB_TOKEN secret is not set";
+            exit 1;
+          fi
+          echo "Using Docker Hub user: ${{ secrets.DOCKERHUB_USERNAME }}"
 
-      - name: Show local images (debug)
-        run: docker images
-
+      # Login to Docker Hub (runs only on main branch)
       - name: Login to Docker Hub
         if: github.ref == 'refs/heads/main'
         uses: docker/login-action@v3
@@ -57,8 +62,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push Image to Docker Hub
-        if: github.ref == 'refs/heads/main'
-        run: |
-          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8
-          docker push $IMAGE:latest
+      # Build and push (atomic) using Docker Buildx action
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8:latest
+
+      - name: Show local images (debug)
+        if: always()
+        run: docker images || true
+
