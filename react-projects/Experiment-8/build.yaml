@@ -1,28 +1,29 @@
-name: Build React App (Experiment-3.1)
-
+name: Build React App (Experiment-8)
 on:
   push:
     branches:
       - main
     paths:
-      - 'React-Projects/Experiment-3.1/**'
+      - 'react-projects/Experiment-8/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'React-Projects/Experiment-3.1/**'
+      - 'react-projects/Experiment-8/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # 👇 permissions should be here, not inside defaults
+    permissions:
+      contents: read
+      packages: write
+
     defaults:
       run:
-        working-directory: React-Projects/Experiment-3.1
+        working-directory: react-projects/Experiment-8
 
-      permissions:
-        contents: read
-        packages: write
-        
     steps:
       # Step 1: Checkout code
       - name: Checkout Repository
@@ -43,8 +44,8 @@ jobs:
       # Step 4: Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t react-experiment-3-1 .
-      
+          docker build -t react-experiment-8 .
+
       - name: Check Docker Username (for debug only)
         run: echo "Docker user is $DOCKER_USERNAME"
         env:
@@ -57,10 +58,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Push Image to Docker Hub
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag react-experiment-3-1 ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-3-1:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-3-1:latest
-
+          docker tag react-experiment-8 ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-3-1:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/react-experiment-8:latest
